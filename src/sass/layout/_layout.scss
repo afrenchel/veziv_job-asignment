@@ -1,0 +1,63 @@
+.App {
+  .app-container {
+    display: flex;
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center;
+    height: 100vh;
+
+    & > * {
+      padding: 10px;
+      flex: 1 100%;
+    }
+
+    @media all and (min-width: 768px) {
+      .worker-card {
+        order: 1;
+      }
+      .showcase-work {
+        order: 2;
+        flex: 3 0px;
+      }
+      .rattings {
+        order: 3;
+      }
+      .footer {
+        order: 4;
+      }
+    }
+    @media all and (min-width: 576px) {
+      aside {
+        flex: 1 0 0;
+        height: calc(100% - 160px);
+      }
+    }
+    header {
+      background: tomato;
+    }
+
+    .footer {
+      background: lightgreen;
+    }
+    header,
+    footer {
+      height: 80px;
+    }
+
+    .main {
+      text-align: left;
+      background: deepskyblue;
+    }
+
+    .showcase-work {
+      background: gold;
+      img {
+        width: 100%;
+      }
+    }
+
+    .rattings {
+      background: hotpink;
+    }
+  }
+}

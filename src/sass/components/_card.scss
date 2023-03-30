@@ -1,0 +1,23 @@
+.worker-card {
+  img {
+    width: 100%;
+  }
+}
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+  column-gap: 10px;
+  row-gap: 15px;
+  justify-content: center;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    max-height: 230px;
+    border: 2px solid $color-primary-dark;
+    img {
+      height: 60%;
+      object-fit: cover;
+    }
+  }
+}

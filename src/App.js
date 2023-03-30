@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import WorkerImg from "./assets/elon-musk.jpg";
+import Portfolio from "./components/Portfolio";
 
-function App() {
+import "./sass/main.scss";
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="app-container">
+        <header>Header</header>
+        <Portfolio />
+        <aside className="worker-card">
+          <div className="worker-card__info">
+            <div className="worker-card__img">
+              <img src={WorkerImg} alt="digital-worker" />
+            </div>
+            <div className="worker-card__info">
+              <span>Ion Popescu</span>
+              <span>@muncitorcinstit</span>
+            </div>
+          </div>
+        </aside>
+        <aside className="rattings">RATINGS</aside>
+        <footer className="footer">FOOTER</footer>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
