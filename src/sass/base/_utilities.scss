@@ -7,3 +7,10 @@
 .border-primary {
   color: $color-primary-dark;
 }
+
+@each $key, $col in $colors {
+  .bg-#{$key} {
+    background-color: $col;
+    color: $color-black;
+  }
+}

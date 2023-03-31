@@ -1,61 +1,22 @@
 import React from "react";
-import WorkerImg from "./assets/elon-musk.jpg";
 import Portfolio from "./components/Portfolio";
+import Header from "./components/Header";
+
 import { reviews } from "./data/reviews";
-import { GoLocation } from "react-icons/go";
-import { MdCardMembership } from "react-icons/md";
-import { GiSandsOfTime } from "react-icons/gi";
-import { GrAdd } from "react-icons/gr";
+
 import { BsLinkedin } from "react-icons/bs";
 import { AiFillGithub } from "react-icons/ai";
 
 import "./sass/main.scss";
+import WorkerSection from "./components/WorkerSection";
 
 const App = () => {
   return (
     <div className="App">
       <div className="app-container">
-        <header>
-          <h1>My works</h1>
-          <button className="button-primary">
-            <GrAdd />
-          </button>
-        </header>
+        <Header />
         <Portfolio />
-        <aside className="worker-card">
-          <div className="worker-card__info">
-            <div className="worker-card__img">
-              <img src={WorkerImg} alt="digital-worker" />
-            </div>
-            <div className="worker-card__info">
-              <span>Frenchel Alina Ioana</span>
-              <span>@webdeveloper</span>
-              <p className="short-descr">Top priority is Client Satisfaction</p>
-
-              <button>Contact me</button>
-              <ul className="other-info">
-                <li>
-                  Where?
-                  <span>
-                    <GoLocation />
-                  </span>
-                </li>
-                <li>
-                  Membership{" "}
-                  <span>
-                    <MdCardMembership />
-                  </span>
-                </li>
-                <li>
-                  Avg.Response Time{" "}
-                  <span>
-                    <GiSandsOfTime />
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </aside>
+        <WorkerSection />
         <aside className="rattings">
           <h2>Alina's ratings</h2>
           <div className="ratings-score">⭐⭐⭐⭐⭐</div>

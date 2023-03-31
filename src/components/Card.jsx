@@ -25,8 +25,8 @@ const Card = ({ work, setModalState }) => {
       </div>
       <div className="card-cta card-cta__delete">
         <Button
-          type={"rounded text-danger"}
-          color={"white"}
+          type={"rounded"}
+          color={"danger"}
           handleClick={handleDeleteWork}
           icon={<AiFillDelete />}
         />

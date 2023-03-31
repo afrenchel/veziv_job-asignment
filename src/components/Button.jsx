@@ -3,7 +3,7 @@ import React from "react";
 const Button = (props) => {
   const {
     type,
-    color = "white",
+    color = "primary",
     title,
     icon,
     handleClick,
