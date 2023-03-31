@@ -3,10 +3,16 @@ import img from "../assets/proj1.png";
 import { MdOutlineMoreVert } from "react-icons/md";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import Button from "./Button";
+import { useWorksDispatch } from "../context/WorksContext";
 
 const Card = ({ work, setModalState }) => {
+  const dispatch = useWorksDispatch();
+
   const handleDeleteWork = () => {
-    console.log("handleDeleteWork");
+    dispatch({ type: "deleted", id: work.id });
+  };
+  const openModal = () => {
+    dispatch({ type: "openModal", id: work.id });
   };
 
   return (
@@ -19,7 +25,7 @@ const Card = ({ work, setModalState }) => {
       <div className="card-cta card-cta__details">
         <Button
           type={"rounded text-primary"}
-          handleClick={() => setModalState({ isOpen: true, workData: work })}
+          handleClick={openModal}
           icon={<AiFillEdit />}
         />
       </div>
@@ -27,8 +33,8 @@ const Card = ({ work, setModalState }) => {
         <Button
           type={"rounded"}
           color={"danger"}
-          handleClick={handleDeleteWork}
           icon={<AiFillDelete />}
+          handleClick={handleDeleteWork}
         />
       </div>
     </div>

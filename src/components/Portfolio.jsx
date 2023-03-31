@@ -1,32 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { useAppState } from "../context/WorksContext";
 
-import { works } from "../data/portfolio";
+// import { works } from "../data/portfolio";
 import Card from "./Card";
 import WorkModalDetails from "./WorkModalDetails";
 
 const Portfolio = () => {
-  const [modalState, setModalState] = useState({
-    isOpen: false,
-    workData: null,
-  });
+  // const [modalState, setModalState] = useState({
+  //   isOpen: false,
+  //   workData: null,
+  // });
+  const appState = useAppState();
 
   useEffect(() => {
-    console.log(modalState, "modalState");
-  }, [modalState]);
+    console.log(appState, appState.works, "modalState");
+  }, [appState]);
 
   return (
     <main className="showcase-work">
       <div className="card-list">
-        {works.map((work) => (
-          <Card
-            key={work.id}
-            work={work}
-            // modalState={modalState}
-            setModalState={setModalState}
-          />
+        {appState.works?.map((work) => (
+          <Card key={work.id} work={work} />
         ))}
       </div>
-      <WorkModalDetails modalState={modalState} setModalState={setModalState} />
+      <WorkModalDetails />
     </main>
   );
 };
