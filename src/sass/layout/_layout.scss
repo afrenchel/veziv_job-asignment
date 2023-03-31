@@ -32,32 +32,18 @@
         height: calc(100% - 160px);
       }
     }
-    header {
-      background: tomato;
-    }
 
-    .footer {
-      background: lightgreen;
-    }
     header,
     footer {
       height: 80px;
-    }
-
-    .main {
-      text-align: left;
-      background: deepskyblue;
+      background-color: $color-primary;
     }
 
     .showcase-work {
-      background: gold;
+      background: $color-grey-light-1;
       img {
         width: 100%;
       }
-    }
-
-    .rattings {
-      background: hotpink;
     }
   }
 }

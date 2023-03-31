@@ -1,5 +1,6 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
+import Form from "./Form";
 
 const WorkModalDetails = ({ modalState, setModalState }) => {
   console.log(modalState, "MODALSTATE");
@@ -15,6 +16,12 @@ const WorkModalDetails = ({ modalState, setModalState }) => {
           <FaTimes />
         </button>
       </div>
+      {modalState.workData && (
+        <Form
+          workData={modalState.workData?.title}
+          setModalState={setModalState}
+        />
+      )}
     </div>
   );
 };

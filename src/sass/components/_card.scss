@@ -1,4 +1,5 @@
 .worker-card {
+  background-color: $color-grey-light-2;
   img {
     width: 100%;
   }
@@ -15,6 +16,11 @@
     flex-direction: column;
     max-height: 230px;
     border: 2px solid $color-primary-dark;
+
+    .card-info h3 {
+      color: $color-primary-dark;
+    }
+
     img {
       height: 60%;
       object-fit: cover;
