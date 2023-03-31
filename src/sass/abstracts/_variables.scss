@@ -16,5 +16,20 @@ $color-grey-dark-3: #333;
 
 $color-white: #fff;
 $color-black: #000;
+$color-danger: #eb455f;
+$color-danger-dark: #850000;
 
 $default-font-size: 1.6rem;
+$base-padding: 0.5em;
+
+$colors: (
+  "primary": $color-primary,
+  "primary-dark": $color-primary-dark,
+  "primary-light": $color-primary-light,
+  "secondary-dark": $color-secondary-dark,
+  "secondary-light": $color-secondary-light,
+  "tertiary-dark": $color-tertiary-dark,
+  "tertiary-light": $color-tertiary-light,
+  "danger": $color-danger,
+  "white": $color-white,
+);

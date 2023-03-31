@@ -21,3 +21,15 @@
     } //1800
   }
 }
+
+@mixin alignCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin text-ellipsize {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

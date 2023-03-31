@@ -16,9 +16,39 @@
     flex-direction: column;
     max-height: 230px;
     border: 2px solid $color-primary-dark;
+    position: relative;
 
-    .card-info h3 {
-      color: $color-primary-dark;
+    .card-info {
+      margin: 0.5em 1em;
+      text-align: center;
+      overflow: hidden;
+      max-height: 75px;
+
+      & * {
+        @include text-ellipsize;
+      }
+      h3 {
+        color: $color-primary-dark;
+        font-size: 1.8rem;
+      }
+      p {
+        color: $color-grey-dark;
+        padding: 0 15%;
+        white-space: unset;
+      }
+    }
+
+    .card-cta {
+      position: absolute;
+
+      &__details {
+        right: 2%;
+        top: 2%;
+      }
+      &__delete {
+        left: 2%;
+        bottom: 2%;
+      }
     }
 
     img {
