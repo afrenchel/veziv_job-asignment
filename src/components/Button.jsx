@@ -2,15 +2,18 @@ import React from "react";
 
 const Button = (props) => {
   const {
-    className,
     type,
-    color = "primary",
+    color = "white",
     title,
     icon,
     handleClick,
+    additionalStyle,
   } = props;
   return (
-    <button onClick={handleClick} className={`btn btn-${color} btn-${type}`}>
+    <button
+      onClick={handleClick}
+      className={`btn btn-${color} btn-${type} ${additionalStyle}`}
+    >
       {title ? title : icon}
     </button>
   );

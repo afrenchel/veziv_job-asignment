@@ -1,7 +1,7 @@
 import React from "react";
 import img from "../assets/proj1.png";
-import { CgMoreVertical } from "react-icons/cg";
-import { AiFillDelete } from "react-icons/ai";
+import { MdOutlineMoreVert } from "react-icons/md";
+import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import Button from "./Button";
 
 const Card = ({ work, setModalState }) => {
@@ -11,22 +11,22 @@ const Card = ({ work, setModalState }) => {
 
   return (
     <div className="card">
-      <img src={img} alt="" />
+      <img src={work.image} alt="" />
       <div className="card-info">
         <h3>{work.title}</h3>
         <p>{work.description}</p>
       </div>
       <div className="card-cta card-cta__details">
         <Button
-          type={"rounded"}
+          type={"rounded text-primary"}
           handleClick={() => setModalState({ isOpen: true, workData: work })}
-          icon={<CgMoreVertical />}
+          icon={<AiFillEdit />}
         />
       </div>
       <div className="card-cta card-cta__delete">
         <Button
-          type={"rounded"}
-          color={"danger"}
+          type={"rounded text-danger"}
+          color={"white"}
           handleClick={handleDeleteWork}
           icon={<AiFillDelete />}
         />

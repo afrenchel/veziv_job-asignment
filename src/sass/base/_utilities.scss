@@ -1,3 +1,9 @@
-.text-danger {
+.text-danger,
+.border-danger {
   color: $color-danger;
+}
+
+.text-primary,
+.border-primary {
+  color: $color-primary-dark;
 }

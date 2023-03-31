@@ -16,6 +16,7 @@
     flex-direction: column;
     max-height: 230px;
     border: 2px solid $color-primary-dark;
+    border-radius: $border-radius;
     position: relative;
 
     .card-info {
@@ -54,6 +55,7 @@
     img {
       height: 60%;
       object-fit: cover;
+      border-radius: $border-radius;
     }
   }
 }
