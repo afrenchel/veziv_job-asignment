@@ -8,20 +8,29 @@ const WorkModalDetails = () => {
   const appState = useAppState();
   const dispatch = useWorksDispatch();
 
-  const title = appState.modal.isOpen
-    ? appState.works[appState.modal.id - 1].title
-    : null;
-  const description = appState.modal.isOpen
-    ? appState.works[appState.modal.id - 1].description
-    : null;
+  // const title = appState.modal.isOpen
+  //   ? appState.works[appState.modal.id - 1].title
+  //   : null;
+  // const description = appState.modal.isOpen
+  //   ? appState.works[appState.modal.id - 1].description
+  //   : null;
 
   return (
     <div
       className={`modal-overlay ${appState.modal.isOpen ? "show-modal" : ""}`}
     >
       <div className="modal-container">
-        <h3>{title}</h3>
-        <p>{description}</p>
+        {appState.modal.id === null && appState.modal.isOpen ? (
+          <form>
+            <input type="text" />
+            <input type="text" />
+          </form>
+        ) : (
+          <>
+            <h3>{appState.works[appState.modal.id - 1]?.title}</h3>
+            <p>{appState.works[appState.modal.id - 1]?.description}</p>
+          </>
+        )}
 
         <Button
           color={"danger"}

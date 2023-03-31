@@ -33,18 +33,28 @@ export function useWorksDispatch() {
 function worksReducer(state, action) {
   switch (action.type) {
     case "added": {
-      return [
-        ...state.works,
-        {
-          id: action.id,
-          text: action.text,
-          done: false,
-        },
-      ];
+      // return [
+      //   ...state.works,
+      //   {
+      //     id: action.id,
+      //     text: action.text,
+      //     done: false,
+      //   },
+      // ];
+      return {
+        modal: { isOpen: true, id: null },
+        works: [
+          ...state.works,
+          {
+            id: action.id,
+            title: action.title,
+            description: action.description,
+          },
+        ],
+      };
     }
     case "changed": {
       return state.works.map((work) => {
-        console.log(work, action.work.id);
         if (work.id === action.work.id) {
           return action.work;
         } else {

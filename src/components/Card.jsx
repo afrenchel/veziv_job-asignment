@@ -5,7 +5,7 @@ import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import Button from "./Button";
 import { useWorksDispatch } from "../context/WorksContext";
 
-const Card = ({ work, setModalState }) => {
+const Card = ({ work }) => {
   const dispatch = useWorksDispatch();
 
   const handleDeleteWork = () => {
