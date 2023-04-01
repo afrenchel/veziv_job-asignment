@@ -7,7 +7,7 @@ const WorksDispatchContext = createContext(null);
 
 const initialState = {
   works,
-  modal: { isOpen: false, id: null },
+  modal: { isOpen: false, id: null, title: null },
 };
 
 export function WorksProvider({ children }) {
@@ -35,13 +35,14 @@ function worksReducer(state, action) {
     case "added": {
       console.log("Added");
       return {
-        modal: { isOpen: false, id: null },
+        modal: { isOpen: false, id: null, title: null },
         works: [
           ...state.works,
           {
             id: action.id,
             title: action.title,
             description: action.description,
+            image: action.image,
           },
         ],
       };
@@ -62,22 +63,22 @@ function worksReducer(state, action) {
         works: newState,
       };
     }
-    case "openModal": {
+    case "openModalDetails": {
       return {
         ...state,
-        modal: { isOpen: true, id: action.id },
+        modal: { isOpen: true, id: action.id, title: "Project Details" },
       };
     }
     case "closeModal": {
       return {
         ...state,
-        modal: { isOpen: false, id: null },
+        modal: { isOpen: false, id: null, title: null },
       };
     }
     case "openAddEntryModal": {
       return {
         ...state,
-        modal: { isOpen: true, id: null },
+        modal: { isOpen: true, id: null, title: "Add Project" },
       };
     }
     default: {

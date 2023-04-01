@@ -1,15 +1,14 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect } from "react";
 import { useAppState } from "../context/WorksContext";
 
-// import { works } from "../data/portfolio";
 import Card from "./Card";
-import WorkModalDetails from "./WorkModalDetails";
+import Modal from "./Modal";
 
 const Portfolio = () => {
   const appState = useAppState();
 
   useEffect(() => {
-    console.log(appState, appState.works, "modalState");
+    console.log(appState, "APPSTATE");
   }, [appState]);
 
   return (
@@ -19,7 +18,7 @@ const Portfolio = () => {
           <Card key={work.id} work={work} />
         ))}
       </div>
-      <WorkModalDetails />
+      <Modal />
     </main>
   );
 };

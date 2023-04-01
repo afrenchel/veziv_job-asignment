@@ -7,6 +7,9 @@
 .border-primary {
   color: $color-primary-dark;
 }
+.border-dooted {
+  border-style: dotted;
+}
 
 @each $key, $col in $colors {
   .bg-#{$key} {

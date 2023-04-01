@@ -11,27 +11,47 @@
   visibility: hidden;
   z-index: -1;
 }
-/* OPEN/CLOSE MODAL */
+
 .show-modal {
   visibility: visible;
   z-index: 10;
 }
 .modal-container {
   background: $color-white;
-  border-radius: 0.25rem;
+  border-radius: $border-radius;
   width: 90vw;
-  height: 30vh;
-  max-width: 620px;
+  max-width: 876px;
+  height: 50vh;
   text-align: center;
   display: grid;
   place-items: center;
   position: relative;
+
+  &.add-entry {
+    width: 30vw;
+  }
+
+  .modal-title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+
+    background-image: linear-gradient(
+      to right,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+  }
 
   h3 {
     color: red;
     font-size: 4rem;
   }
 }
+
 .close-modal-btn {
   position: absolute;
   top: 1rem;

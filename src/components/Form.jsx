@@ -1,14 +1,25 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect } from "react";
 
-import { useWorksDispatch, useAppState } from "../context/WorksContext";
+//Component imports
 import Button from "./Button";
+import Input from "./Input";
+
+//Functional imports
+import { useWorksDispatch, useAppState } from "../context/WorksContext";
+import { RiImageAddFill } from "react-icons/ri";
 
 const Form = () => {
-  const appState = useAppState();
-
+  //Hooks
   const dispatch = useWorksDispatch();
+
+  //LocalState
   const [projectTitle, setProjectTitle] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
+  const [projectImg, setProjectImg] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(false);
+  const [formErrorMessage, setFormErrorMessage] = useState(false);
+
+  //Functional
 
   const handleProjectTitleChange = (e) => {
     e.preventDefault();
@@ -19,36 +30,92 @@ const Form = () => {
     e.preventDefault();
     setProjectDescription(e.target.value);
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch({
-      type: "added",
-      id: crypto.randomUUID(),
-      title: projectTitle,
-      description: projectDescription,
-    });
+
+  const handleProjectImgChange = (e) => {
+    const img = e.target.files[0];
+    if (img && img.type.substring(0, 5) === "image") {
+      setProjectImg(URL.createObjectURL(img));
+      setErrorMessage(false);
+    } else {
+      setProjectImg(null);
+      setErrorMessage(true);
+    }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (projectTitle && projectDescription && projectImg) {
+      dispatch({
+        type: "added",
+        id: crypto.randomUUID(),
+        title: projectTitle,
+        description: projectDescription,
+        image: projectImg,
+      });
+      setFormErrorMessage(false);
+    } else {
+      setFormErrorMessage(true);
+    }
+  };
+
+  //Effects
+
+  useEffect(() => {
+    if (projectTitle && projectDescription && projectImg) {
+      setFormErrorMessage(false);
+    } else {
+      setFormErrorMessage(true);
+    }
+  }, [projectTitle, projectDescription, projectImg]);
+
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="title">Project Title</label>
-      <input
+    <form>
+      {formErrorMessage && (
+        <span className="text-danger">Complete ALL fields</span>
+      )}
+
+      <Input
         placeholder="Add Project Title"
         onChange={handleProjectTitleChange}
         type="text"
         name="title"
-        id="title"
+        label={"Project Title"}
         value={projectTitle}
       />
-      <input
-        placeholder="Add Project description"
+
+      <Input
+        placeholder={"Add Project Description"}
         onChange={handleProjectDescriptionChange}
-        type="text"
-        name="description"
-        id="description"
+        name={"description"}
         value={projectDescription}
+        label={"Project Description"}
       />
-      <Button title={"SUBMIT"} handleClick={handleSubmit} />
+
+      <label className="label-img-input">
+        {projectImg?.name ? projectImg.name : "Select Image"}
+        <input
+          type="file"
+          id="image"
+          name="image"
+          accept="image/jpeg, image/png"
+          defaultValue={projectImg}
+          onChange={handleProjectImgChange}
+        />
+        <RiImageAddFill />
+      </label>
+
+      {errorMessage && (
+        <span className="text-danger">
+          The image you have uploaded is not of type img or png
+        </span>
+      )}
+
+      <Button
+        title={"SUBMIT"}
+        color={formErrorMessage ? "danger" : "secondary-light"}
+        handleClick={handleSubmit}
+      />
     </form>
   );
 };

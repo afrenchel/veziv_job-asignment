@@ -1,11 +1,12 @@
 import React from "react";
+
 import WorkerImg from "../assets/worker_img.png";
 import { worker } from "../data/worker";
 import { GoLocation } from "react-icons/go";
-import { MdCardMembership } from "react-icons/md";
 import { GiSandsOfTime } from "react-icons/gi";
 import { BsSendFill } from "react-icons/bs";
 import { FaUserAlt } from "react-icons/fa";
+
 import Button from "./Button";
 
 const WorkerSection = () => {

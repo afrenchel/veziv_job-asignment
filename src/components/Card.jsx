@@ -1,18 +1,23 @@
 import React from "react";
-import img from "../assets/proj1.png";
-import { MdOutlineMoreVert } from "react-icons/md";
-import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+
+//@label Component Imports
 import Button from "./Button";
+
+//@label Functional Imports
+
+import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { useWorksDispatch } from "../context/WorksContext";
 
 const Card = ({ work }) => {
+  //Hooks
   const dispatch = useWorksDispatch();
 
+  //Functional
   const handleDeleteWork = () => {
     dispatch({ type: "deleted", id: work.id });
   };
   const openModal = () => {
-    dispatch({ type: "openModal", id: work.id });
+    dispatch({ type: "openModalDetails", id: work.id });
   };
 
   return (
