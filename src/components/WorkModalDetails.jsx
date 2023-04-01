@@ -21,10 +21,7 @@ const WorkModalDetails = () => {
     >
       <div className="modal-container">
         {appState.modal.id === null && appState.modal.isOpen ? (
-          <form>
-            <input type="text" />
-            <input type="text" />
-          </form>
+          <Form />
         ) : (
           <>
             <h3>{appState.works[appState.modal.id - 1]?.title}</h3>

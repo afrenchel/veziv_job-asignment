@@ -1,17 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
-const Form = ({ workData, setModalState }) => {
-  const [inputValue, setInputValue] = useState(workData);
+import { useWorksDispatch, useAppState } from "../context/WorksContext";
+import Button from "./Button";
 
-  const handleChange = (e) => {
+const Form = () => {
+  const appState = useAppState();
+
+  const dispatch = useWorksDispatch();
+  const [projectTitle, setProjectTitle] = useState("");
+  const [projectDescription, setProjectDescription] = useState("");
+
+  const handleProjectTitleChange = (e) => {
     e.preventDefault();
-    setInputValue(e.target.value);
+    setProjectTitle(e.target.value);
+  };
+
+  const handleProjectDescriptionChange = (e) => {
+    e.preventDefault();
+    setProjectDescription(e.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    setModalState({
-      isOpen: true,
-      workData: { title: inputValue, description: "TEST" },
+    dispatch({
+      type: "added",
+      id: crypto.randomUUID(),
+      title: projectTitle,
+      description: projectDescription,
     });
   };
 
@@ -19,12 +33,22 @@ const Form = ({ workData, setModalState }) => {
     <form onSubmit={handleSubmit}>
       <label htmlFor="title">Project Title</label>
       <input
-        onChange={handleChange}
+        placeholder="Add Project Title"
+        onChange={handleProjectTitleChange}
         type="text"
         name="title"
         id="title"
-        value={inputValue}
+        value={projectTitle}
       />
+      <input
+        placeholder="Add Project description"
+        onChange={handleProjectDescriptionChange}
+        type="text"
+        name="description"
+        id="description"
+        value={projectDescription}
+      />
+      <Button title={"SUBMIT"} handleClick={handleSubmit} />
     </form>
   );
 };

@@ -8,7 +8,7 @@ const Header = () => {
   const dispatch = useWorksDispatch();
 
   const openModal = () => {
-    dispatch({ type: "added" });
+    dispatch({ type: "openAddEntryModal" });
   };
   return (
     <header>

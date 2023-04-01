@@ -6,10 +6,6 @@ import Card from "./Card";
 import WorkModalDetails from "./WorkModalDetails";
 
 const Portfolio = () => {
-  // const [modalState, setModalState] = useState({
-  //   isOpen: false,
-  //   workData: null,
-  // });
   const appState = useAppState();
 
   useEffect(() => {

@@ -10,7 +10,7 @@ import Proj9 from "../assets/proj9.png";
 
 export const works = [
   {
-    id: 1,
+    id: crypto.randomUUID(),
     title: "E-commerce Website",
     description: "Developed an e-commerce website using React and Node.js",
     image: Proj1,
@@ -18,7 +18,7 @@ export const works = [
     status: "Completed",
   },
   {
-    id: 2,
+    id: crypto.randomUUID(),
     title: "Online Marketplace",
     description:
       "Built an online marketplace using React, Node.js, and MongoDB",
@@ -27,7 +27,7 @@ export const works = [
     status: "In progress",
   },
   {
-    id: 3,
+    id: crypto.randomUUID(),
     title: "Mobile App Development",
     description:
       "Designed and developed a cross-platform mobile app using React Native",
@@ -36,7 +36,7 @@ export const works = [
     status: "Completed",
   },
   {
-    id: 4,
+    id: crypto.randomUUID(),
     title: "Responsive Website Design",
     description:
       "Created a responsive website design using HTML, CSS, and JavaScript",
@@ -45,7 +45,7 @@ export const works = [
     status: "Completed",
   },
   {
-    id: 5,
+    id: crypto.randomUUID(),
     title: "Custom WordPress Theme",
     description:
       "Designed and developed a custom WordPress theme using PHP, HTML, and CSS",
@@ -54,7 +54,7 @@ export const works = [
     status: "In progress",
   },
   {
-    id: 6,
+    id: crypto.randomUUID(),
     title: "Social Media Campaign",
     description:
       "Developed a social media campaign strategy and created social media content for a client",
@@ -63,7 +63,7 @@ export const works = [
     status: "Completed",
   },
   {
-    id: 7,
+    id: crypto.randomUUID(),
     title: "Chatbot Development",
     description:
       "Built a chatbot using Node.js and Dialogflow for a customer service application",
@@ -73,7 +73,7 @@ export const works = [
   },
 
   {
-    id: 8,
+    id: crypto.randomUUID(),
     title: " WordPress Theme Rainbow Design",
     description:
       "Designed and developed a custom WordPress theme using PHP, HTML, and CSS",
@@ -83,7 +83,7 @@ export const works = [
   },
 
   {
-    id: 9,
+    id: crypto.randomUUID(),
     title: "Social Media Advertise",
     description:
       "Developed a social media advertise strategy and created social media content for a company",

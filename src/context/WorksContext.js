@@ -33,16 +33,9 @@ export function useWorksDispatch() {
 function worksReducer(state, action) {
   switch (action.type) {
     case "added": {
-      // return [
-      //   ...state.works,
-      //   {
-      //     id: action.id,
-      //     text: action.text,
-      //     done: false,
-      //   },
-      // ];
+      console.log("Added");
       return {
-        modal: { isOpen: true, id: null },
+        modal: { isOpen: false, id: null },
         works: [
           ...state.works,
           {
@@ -79,6 +72,12 @@ function worksReducer(state, action) {
       return {
         ...state,
         modal: { isOpen: false, id: null },
+      };
+    }
+    case "openAddEntryModal": {
+      return {
+        ...state,
+        modal: { isOpen: true, id: null },
       };
     }
     default: {
