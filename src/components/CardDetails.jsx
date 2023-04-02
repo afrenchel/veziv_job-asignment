@@ -13,10 +13,9 @@ const CardDetails = ({ currentCard, isEditing, setIsEditing }) => {
         />
       </div>
 
-      <div>
+      <div className="details-container__info">
         {!isEditing ? (
           <>
-            {" "}
             <h3>{currentCard?.title}</h3>
             <p>{currentCard?.description}</p>
             <Button

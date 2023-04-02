@@ -11,13 +11,16 @@
     text-transform: uppercase;
     font-weight: 600;
     border-radius: $border-radius-sm;
+    box-shadow: $button-box-shadow;
 
     &:hover,
     &:focus {
       color: darken($col, 25%);
+      transform: translateY(-2px);
     }
     &:active {
       border: 1px solid darken($col, 25%);
+      transform: translateY(-1px);
     }
   }
 }

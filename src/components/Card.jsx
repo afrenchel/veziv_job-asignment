@@ -5,7 +5,7 @@ import Button from "./Button";
 
 //@label Functional Imports
 
-import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+import { AiFillDelete, AiFillEdit, AiFillEye } from "react-icons/ai";
 import { useWorksDispatch } from "../context/WorksContext";
 
 const Card = ({ work }) => {
@@ -21,7 +21,7 @@ const Card = ({ work }) => {
   };
 
   return (
-    <div className="card">
+    <div className={`card ${work.isHidden ? "card-hidden" : ""}`}>
       <img src={work.image} alt="" />
       <div className="card-info">
         <h3>{work.title}</h3>
@@ -41,6 +41,15 @@ const Card = ({ work }) => {
           icon={<AiFillDelete />}
           handleClick={handleDeleteWork}
         />
+      </div>
+      <div className="card-cta card-cta__link">
+        <a
+          href={work.link}
+          className="btn btn-tertiary-light btn-rounded "
+          target="_blank"
+        >
+          <AiFillEye />
+        </a>
       </div>
     </div>
   );

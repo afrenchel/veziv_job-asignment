@@ -2,6 +2,7 @@ import React, { useId } from "react";
 
 const Input = ({
   type = "text",
+  checked,
   onChange,
   name,
   value,
@@ -14,7 +15,11 @@ const Input = ({
   const uniqueId = useId();
 
   return (
-    <div className="input-container">
+    <div
+      className={`input-container ${
+        type === "checkbox" ? "input-container__check" : ""
+      }`}
+    >
       <label
         className={`${accept ? "label-img-input" : ""}`}
         htmlFor={uniqueId}
@@ -28,6 +33,7 @@ const Input = ({
         name={name}
         onChange={onChange}
         value={value}
+        checked={checked}
         placeholder={placeholder}
         accept={accept}
         defaultValue={defaultValue}

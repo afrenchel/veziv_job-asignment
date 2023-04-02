@@ -13,6 +13,12 @@
     border-radius: $border-radius;
     position: relative;
 
+    &-hidden {
+      & > *:not(.card-cta) {
+        opacity: 0.25;
+      }
+    }
+
     .card-info {
       margin: 0.5em 1em;
       text-align: center;
@@ -44,12 +50,16 @@
         left: 2%;
         bottom: 2%;
       }
+      &__link {
+        right: 2%;
+        bottom: 2%;
+      }
     }
 
     img {
       height: 60%;
       object-fit: cover;
-      border-radius: $border-radius;
+      border-radius: 6px;
     }
   }
 }

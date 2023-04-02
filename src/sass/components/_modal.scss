@@ -28,7 +28,7 @@
 
   &.add-entry {
     width: 30vw;
-    height: 50vh;
+    height: 75vh;
   }
 
   &.details {
@@ -44,6 +44,11 @@
         img {
           height: 100%;
         }
+      }
+      &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
       }
     }
   }

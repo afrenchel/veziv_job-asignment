@@ -42,6 +42,8 @@ function worksReducer(state, action) {
             title: action.title,
             description: action.description,
             image: action.image,
+            isHidden: action.isHidden,
+            link: action.link,
           },
         ],
       };

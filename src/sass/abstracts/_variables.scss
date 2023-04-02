@@ -24,6 +24,7 @@ $default-font-size: 1.6rem;
 $base-padding: 0.5em;
 $border-radius: 8px;
 $border-radius-sm: 4px;
+$button-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 
 $colors: (
   "primary": $color-primary,
@@ -35,4 +36,5 @@ $colors: (
   "tertiary-light": $color-tertiary-light,
   "danger": $color-danger,
   "white": $color-white,
+  "black": $color-black,
 );

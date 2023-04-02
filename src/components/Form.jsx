@@ -15,6 +15,10 @@ const Form = ({ isEditing, setIsEditing, currentCard }) => {
   const [projectTitle, setProjectTitle] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
   const [projectImg, setProjectImg] = useState(null);
+  const [projectLink, setProjectLink] = useState("");
+  const [projectStatus, setProjectStatus] = useState(
+    currentCard ? currentCard.isHidden : false
+  );
   const [errorInputImgMessage, setErrorInputImgMessage] = useState("");
   const [formErrorMessage, setFormErrorMessage] = useState("");
 
@@ -22,13 +26,20 @@ const Form = ({ isEditing, setIsEditing, currentCard }) => {
 
   const handleProjectTitleChange = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
     setProjectTitle(e.target.value);
   };
 
   const handleProjectDescriptionChange = (e) => {
     e.preventDefault();
     setProjectDescription(e.target.value);
+  };
+  const handleProjectLinkChange = (e) => {
+    e.preventDefault();
+    setProjectLink(e.target.value);
+  };
+
+  const handleProjectStatusChange = (e) => {
+    setProjectStatus(e.target.checked);
   };
 
   const handleProjectImgChange = (e) => {
@@ -46,13 +57,15 @@ const Form = ({ isEditing, setIsEditing, currentCard }) => {
     e.preventDefault();
     const randomUUID = crypto.randomUUID();
     if (!isEditing) {
-      if (projectTitle && projectDescription && projectImg) {
+      if (projectTitle && projectDescription && projectImg && projectLink) {
         dispatch({
           type: "added",
           id: randomUUID,
           title: projectTitle,
           description: projectDescription,
           image: projectImg,
+          isHidden: projectStatus,
+          link: projectLink,
         });
         setFormErrorMessage("");
       } else {
@@ -68,6 +81,7 @@ const Form = ({ isEditing, setIsEditing, currentCard }) => {
             ? projectDescription
             : currentCard.description,
           image: projectImg ? projectImg : currentCard.image,
+          isHidden: projectStatus,
         },
       });
       setIsEditing(false);
@@ -93,6 +107,13 @@ const Form = ({ isEditing, setIsEditing, currentCard }) => {
         value={projectDescription}
         label={"Project Description"}
       />
+      <Input
+        placeholder={"Add project link"}
+        onChange={handleProjectLinkChange}
+        name={"link"}
+        value={projectLink}
+        label={"Project Link"}
+      />
 
       <Input
         type={"file"}
@@ -101,6 +122,13 @@ const Form = ({ isEditing, setIsEditing, currentCard }) => {
         defaultValue={projectImg}
         onChange={handleProjectImgChange}
         errorMessage={errorInputImgMessage}
+      />
+
+      <Input
+        type={"checkbox"}
+        label={"Hide Project"}
+        checked={projectStatus}
+        onChange={handleProjectStatusChange}
       />
 
       <span className="text-danger">{formErrorMessage}</span>

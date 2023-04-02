@@ -12,6 +12,17 @@ form {
     max-width: 300px;
     text-align: start;
 
+    &__check {
+      display: flex;
+      input[type="checkbox"] {
+        accent-color: $color-primary;
+        width: fit-content;
+        cursor: pointer;
+        margin-top: 0;
+        margin-left: 0.75em;
+      }
+    }
+
     &__file {
       position: relative;
 

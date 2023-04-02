@@ -15,7 +15,8 @@ export const works = [
     description: "Developed an e-commerce website using React and Node.js",
     image: Proj1,
     client: "Acme Corp",
-    status: "Completed",
+    isHidden: false,
+    link: "https://www.fiverr.com/users/phoebe_johnson/portfolio/NjI1ZmZiMTI3YzZmNjEwMDAxZWRhMDM1",
   },
   {
     id: crypto.randomUUID(),
@@ -24,7 +25,8 @@ export const works = [
       "Built an online marketplace using React, Node.js, and MongoDB",
     image: Proj2,
     client: "XYZ Inc",
-    status: "In progress",
+    isHidden: true,
+    link: "https://www.fiverr.com/users/phoebe_johnson/portfolio/NjI4ZGJjMWQ0M2ZjMGMwMDAxNjc5MTQz",
   },
   {
     id: crypto.randomUUID(),
@@ -33,7 +35,8 @@ export const works = [
       "Designed and developed a cross-platform mobile app using React Native",
     image: Proj3,
     client: "ABC Corp",
-    status: "Completed",
+    isHidden: false,
+    link: "https://www.fiverr.com/users/phoebe_johnson/portfolio/NjI4ZGJmZmFiYTIxMDgwMDAxYzNlMTlm",
   },
   {
     id: crypto.randomUUID(),
@@ -42,7 +45,8 @@ export const works = [
       "Created a responsive website design using HTML, CSS, and JavaScript",
     image: Proj4,
     client: "John Smith",
-    status: "Completed",
+    isHidden: false,
+    link: "https://www.fiverr.com/users/phoebe_johnson/portfolio/NjI4ZGMyNWRlNWI3NWUwMDAxNzgyOGI2",
   },
   {
     id: crypto.randomUUID(),
@@ -51,7 +55,8 @@ export const works = [
       "Designed and developed a custom WordPress theme using PHP, HTML, and CSS",
     image: Proj5,
     client: "Jane Doe",
-    status: "In progress",
+    isHidden: true,
+    link: "https://www.fiverr.com/users/phoebe_johnson/portfolio/NjI4ZGM0OTljMTRhNTAwMDAxNWQzNjYw",
   },
   {
     id: crypto.randomUUID(),
@@ -60,7 +65,8 @@ export const works = [
       "Developed a social media campaign strategy and created social media content for a client",
     image: Proj6,
     client: "ABC Corp",
-    status: "Completed",
+    isHidden: false,
+    link: "https://www.fiverr.com/users/phoebe_johnson/portfolio/NjI4ZGM3NGRlNWI3NWUwMDAxNzgyOWU5",
   },
   {
     id: crypto.randomUUID(),
@@ -69,7 +75,8 @@ export const works = [
       "Built a chatbot using Node.js and Dialogflow for a customer service application",
     image: Proj7,
     client: "XYZ Inc",
-    status: "In progress",
+    isHidden: true,
+    link: "https://www.fiverr.com/users/phoebe_johnson/portfolio/NjI5NTM2Y2U5MGJiOTQwMDAxYzAzNTI1",
   },
 
   {
@@ -79,7 +86,8 @@ export const works = [
       "Designed and developed a custom WordPress theme using PHP, HTML, and CSS",
     image: Proj8,
     client: "Jane Doe",
-    status: "In progress",
+    isHidden: true,
+    link: "https://www.fiverr.com/users/phoebe_johnson/portfolio/NjI5NTNiYzdjMTRhNTAwMDAxNWU5YTMx",
   },
 
   {
@@ -89,7 +97,8 @@ export const works = [
       "Developed a social media advertise strategy and created social media content for a company",
     image: Proj9,
     client: "ABC Corp",
-    status: "Completed",
+    isHidden: false,
+    link: "https://www.fiverr.com/users/zarah_khaan/portfolio/NjMzMTc4ODk2Y2UzODQwMDAxZTBkZjkx",
   },
   // {
   //   "id": 10,
@@ -97,6 +106,6 @@ export const works = [
   //   "description": "Built a chatbot using Node.js and Dialogflow for a customer service application",
   //   "image": "https://via.placeholder.com/500x300.png?text=Project+7",
   //   "client": "XYZ Inc",
-  //   "status": "In progress",
+  //   "isHidden": true,
   // }
 ];
