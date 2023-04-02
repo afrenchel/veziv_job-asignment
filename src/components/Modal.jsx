@@ -21,7 +21,11 @@ const Modal = () => {
     <div
       className={`modal-overlay ${appState.modal.isOpen ? "show-modal" : ""}`}
     >
-      <div className={`modal-container ${isAddEntryModal ? "add-entry" : ""}`}>
+      <div
+        className={`modal-container ${
+          isAddEntryModal ? "add-entry" : "details"
+        }`}
+      >
         <h2 className="modal-title">{appState?.modal?.title}</h2>
 
         {isAddEntryModal ? (
@@ -30,6 +34,7 @@ const Modal = () => {
           <>
             <h3>{currentCard?.title}</h3>
             <p>{currentCard?.description}</p>
+            {/* <Form /> */}
           </>
         )}
         <Button

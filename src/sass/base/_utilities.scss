@@ -15,5 +15,6 @@
   .bg-#{$key} {
     background-color: $col;
     color: $color-black;
+    border: none;
   }
 }

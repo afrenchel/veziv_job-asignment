@@ -12,14 +12,28 @@ form {
     max-width: 300px;
     text-align: start;
 
+    &__file {
+      position: relative;
+
+      svg {
+        position: absolute;
+        left: 100%;
+      }
+    }
+
     input {
       display: block;
       width: 100%;
       padding: 1.2rem;
-      border: 1px solid $color-grey-dark;
+      margin-top: 0.5em;
+      border: 2px solid $color-grey-dark;
       border-radius: $border-radius-sm;
       color: $color-grey-dark-3;
       font-weight: 600;
+    }
+
+    .input-err {
+      border-color: $color-danger;
     }
   }
 

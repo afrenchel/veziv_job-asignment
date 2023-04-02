@@ -16,8 +16,8 @@ const Form = () => {
   const [projectTitle, setProjectTitle] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
   const [projectImg, setProjectImg] = useState(null);
-  const [errorMessage, setErrorMessage] = useState(false);
-  const [formErrorMessage, setFormErrorMessage] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [formErrorMessage, setFormErrorMessage] = useState("");
 
   //Functional
 
@@ -38,7 +38,7 @@ const Form = () => {
       setErrorMessage(false);
     } else {
       setProjectImg(null);
-      setErrorMessage(true);
+      setErrorMessage("File must be an image");
     }
   };
 
@@ -53,9 +53,9 @@ const Form = () => {
         description: projectDescription,
         image: projectImg,
       });
-      setFormErrorMessage(false);
+      setFormErrorMessage("");
     } else {
-      setFormErrorMessage(true);
+      setFormErrorMessage("This field is required");
     }
   };
 
@@ -71,10 +71,6 @@ const Form = () => {
 
   return (
     <form>
-      {formErrorMessage && (
-        <span className="text-danger">Complete ALL fields</span>
-      )}
-
       <Input
         placeholder="Add Project Title"
         onChange={handleProjectTitleChange}
@@ -82,6 +78,7 @@ const Form = () => {
         name="title"
         label={"Project Title"}
         value={projectTitle}
+        errorMessage={formErrorMessage}
       />
 
       <Input
@@ -90,9 +87,10 @@ const Form = () => {
         name={"description"}
         value={projectDescription}
         label={"Project Description"}
+        errorMessage={formErrorMessage}
       />
 
-      <label className="label-img-input">
+      {/* <label className="label-img-input">
         {projectImg?.name ? projectImg.name : "Select Image"}
         <input
           type="file"
@@ -109,12 +107,20 @@ const Form = () => {
         <span className="text-danger">
           The image you have uploaded is not of type img or png
         </span>
-      )}
+      )} */}
+      <Input
+        type={"file"}
+        name={"input-image"}
+        accept="image/jpeg, image/png"
+        defaultValue={projectImg}
+        onChange={handleProjectImgChange}
+      />
 
       <Button
         title={"SUBMIT"}
-        color={formErrorMessage ? "danger" : "secondary-light"}
+        color={formErrorMessage.length ? "danger" : "primary"}
         handleClick={handleSubmit}
+        additionalStyle={"bg-danger"}
       />
     </form>
   );
