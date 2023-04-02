@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 //Component imports
 import Button from "./Button";
@@ -6,9 +6,8 @@ import Input from "./Input";
 
 //Functional imports
 import { useWorksDispatch, useAppState } from "../context/WorksContext";
-import { RiImageAddFill } from "react-icons/ri";
 
-const Form = () => {
+const Form = ({ isEditing, setIsEditing, currentCard }) => {
   //Hooks
   const dispatch = useWorksDispatch();
 
@@ -16,13 +15,14 @@ const Form = () => {
   const [projectTitle, setProjectTitle] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
   const [projectImg, setProjectImg] = useState(null);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorInputImgMessage, setErrorInputImgMessage] = useState("");
   const [formErrorMessage, setFormErrorMessage] = useState("");
 
   //Functional
 
   const handleProjectTitleChange = (e) => {
     e.preventDefault();
+    console.log(e.target.value);
     setProjectTitle(e.target.value);
   };
 
@@ -35,39 +35,44 @@ const Form = () => {
     const img = e.target.files[0];
     if (img && img.type.substring(0, 5) === "image") {
       setProjectImg(URL.createObjectURL(img));
-      setErrorMessage(false);
+      setErrorInputImgMessage(false);
     } else {
       setProjectImg(null);
-      setErrorMessage("File must be an image");
+      setErrorInputImgMessage("File must be an image");
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (projectTitle && projectDescription && projectImg) {
-      dispatch({
-        type: "added",
-        id: crypto.randomUUID(),
-        title: projectTitle,
-        description: projectDescription,
-        image: projectImg,
-      });
-      setFormErrorMessage("");
+    const randomUUID = crypto.randomUUID();
+    if (!isEditing) {
+      if (projectTitle && projectDescription && projectImg) {
+        dispatch({
+          type: "added",
+          id: randomUUID,
+          title: projectTitle,
+          description: projectDescription,
+          image: projectImg,
+        });
+        setFormErrorMessage("");
+      } else {
+        setFormErrorMessage("All fields are required!");
+      }
     } else {
-      setFormErrorMessage("All fields are required!");
+      dispatch({
+        type: "changed",
+        work: {
+          id: currentCard?.id,
+          title: projectTitle ? projectTitle : currentCard.title,
+          description: projectDescription
+            ? projectDescription
+            : currentCard.description,
+          image: projectImg ? projectImg : currentCard.image,
+        },
+      });
+      setIsEditing(false);
     }
   };
-
-  //Effects
-
-  useEffect(() => {
-    if (projectTitle && projectDescription && projectImg) {
-      setFormErrorMessage(false);
-    } else {
-      setFormErrorMessage(true);
-    }
-  }, [projectTitle, projectDescription, projectImg]);
 
   return (
     <form>
@@ -87,41 +92,23 @@ const Form = () => {
         name={"description"}
         value={projectDescription}
         label={"Project Description"}
-        errorMessage={formErrorMessage}
       />
 
-      {/* <label className="label-img-input">
-        {projectImg?.name ? projectImg.name : "Select Image"}
-        <input
-          type="file"
-          id="image"
-          name="image"
-          accept="image/jpeg, image/png"
-          defaultValue={projectImg}
-          onChange={handleProjectImgChange}
-        />
-        <RiImageAddFill />
-      </label>
-
-      {errorMessage && (
-        <span className="text-danger">
-          The image you have uploaded is not of type img or png
-        </span>
-      )} */}
       <Input
         type={"file"}
         name={"input-image"}
         accept="image/jpeg, image/png"
         defaultValue={projectImg}
         onChange={handleProjectImgChange}
-        errorMessage={formErrorMessage}
+        errorMessage={errorInputImgMessage}
       />
+
+      <span className="text-danger">{formErrorMessage}</span>
 
       <Button
         title={"SUBMIT"}
-        color={formErrorMessage.length ? "danger" : "primary"}
         handleClick={handleSubmit}
-        additionalStyle={"bg-danger"}
+        additionalStyle={"bg-primary"}
       />
     </form>
   );

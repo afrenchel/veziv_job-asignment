@@ -1,4 +1,4 @@
-import React, { Children, useId } from "react";
+import React, { useId } from "react";
 
 const Input = ({
   type = "text",
@@ -10,7 +10,6 @@ const Input = ({
   errorMessage,
   accept,
   defaultValue,
-  children,
 }) => {
   const uniqueId = useId();
 
@@ -33,7 +32,9 @@ const Input = ({
         accept={accept}
         defaultValue={defaultValue}
       />
-      <span className="text-danger">{errorMessage}</span>
+      <span className="text-danger">
+        {errorMessage && accept ? errorMessage : ""}
+      </span>
     </div>
   );
 };

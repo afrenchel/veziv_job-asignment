@@ -33,7 +33,6 @@ export function useWorksDispatch() {
 function worksReducer(state, action) {
   switch (action.type) {
     case "added": {
-      console.log("Added");
       return {
         modal: { isOpen: false, id: null, title: null },
         works: [
@@ -48,13 +47,17 @@ function worksReducer(state, action) {
       };
     }
     case "changed": {
-      return state.works.map((work) => {
+      const newState = state.works.map((work) => {
         if (work.id === action.work.id) {
           return action.work;
         } else {
           return work;
         }
       });
+      return {
+        modal: { isOpen: false, id: null, title: null },
+        works: newState,
+      };
     }
     case "deleted": {
       const newState = state?.works?.filter((work) => work.id !== action.id);

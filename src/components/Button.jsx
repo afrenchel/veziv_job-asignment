@@ -8,11 +8,13 @@ const Button = (props) => {
     icon,
     handleClick,
     additionalStyle,
+    disabled,
   } = props;
   return (
     <button
       onClick={handleClick}
       className={`btn btn-${color} btn-${type} ${additionalStyle}`}
+      disabled={disabled}
     >
       {title ? title : icon}
     </button>

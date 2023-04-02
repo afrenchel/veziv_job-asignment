@@ -21,7 +21,6 @@
   border-radius: $border-radius;
   width: 90vw;
   max-width: 876px;
-  height: 50vh;
   text-align: center;
   display: grid;
   place-items: center;
@@ -29,30 +28,50 @@
 
   &.add-entry {
     width: 30vw;
+    height: 50vh;
   }
 
   &.details {
-    background-color: aqua;
+    .details-container {
+      display: flex;
+      min-height: 460px;
+      max-height: 525px;
+      gap: 1rem;
+
+      .modal-image-wrapper {
+        max-width: 60%;
+        border-right: 1px solid #ddd;
+        img {
+          height: 100%;
+        }
+      }
+    }
   }
+  .modal-header {
+    width: 100%;
+    padding-block: 2rem;
+    border-bottom: 1.5px solid #ddd;
 
-  .modal-title {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    display: inline-block;
+    .modal-title {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      display: inline-block;
 
-    background-image: linear-gradient(
-      to right,
-      $color-primary-light,
-      $color-primary-dark
-    );
-    -webkit-background-clip: text;
-    color: transparent;
+      background-image: linear-gradient(
+        to right,
+        $color-primary-light,
+        $color-primary-dark
+      );
+      -webkit-background-clip: text;
+      color: transparent;
+    }
   }
 
   h3 {
-    color: red;
-    font-size: 4rem;
+    color: $color-primary;
+    font-size: 2rem;
+    margin-bottom: 1em;
   }
 }
 
