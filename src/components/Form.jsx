@@ -55,7 +55,7 @@ const Form = () => {
       });
       setFormErrorMessage("");
     } else {
-      setFormErrorMessage("This field is required");
+      setFormErrorMessage("All fields are required!");
     }
   };
 
@@ -114,6 +114,7 @@ const Form = () => {
         accept="image/jpeg, image/png"
         defaultValue={projectImg}
         onChange={handleProjectImgChange}
+        errorMessage={formErrorMessage}
       />
 
       <Button

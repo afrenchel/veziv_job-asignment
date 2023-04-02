@@ -4,6 +4,7 @@ import React from "react";
 import Portfolio from "./components/Portfolio";
 import Header from "./components/Header";
 import WorkerSection from "./components/WorkerSection";
+import Ratings from "./components/Ratings";
 
 import { WorksProvider } from "./context/WorksContext";
 
@@ -20,10 +21,7 @@ const App = () => {
           <Header />
           <Portfolio />
           <WorkerSection />
-          <aside className="rattings">
-            <h2>Alina's ratings</h2>
-            <div className="ratings-score">⭐⭐⭐⭐⭐</div>
-          </aside>
+          <Ratings />
           <footer className="footer">
             <p className="p-text">
               built with <span className="heart-icon"> &#10084;</span> by ALINA

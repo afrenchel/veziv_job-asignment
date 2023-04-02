@@ -7,9 +7,11 @@
     &__img {
       width: 50%;
       margin: 0 auto;
+
       img {
         width: 100%;
         border-radius: 50%;
+        border: 2px dashed black;
       }
     }
     &__info {

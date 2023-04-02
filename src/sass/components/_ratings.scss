@@ -1,0 +1,30 @@
+.rattings {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  .review-bubble {
+    background-color: lighten($color-primary, 15%);
+
+    color: black;
+    min-height: 200px;
+    height: fit-content;
+    border-radius: 50px;
+    display: flex;
+    padding: 5%;
+    flex-direction: column;
+    border: 2px dashed black;
+    clip-path: polygon(
+      0 3%,
+      100% 3%,
+      100% 75%,
+      75% 75%,
+      35% 91%,
+      50% 75%,
+      0% 75%
+    );
+
+    h3 {
+      margin-bottom: 1em;
+    }
+  }
+}
