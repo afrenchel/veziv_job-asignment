@@ -1,36 +1,69 @@
 .App {
   .app-container {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: column;
     font-weight: bold;
     text-align: center;
     height: 100vh;
+    gap: 2em;
 
-    & > * {
-      padding: 10px;
-      flex: 1 100%;
+    h2 {
+      font-size: calc(1.5rem + 0.2vw);
+      text-transform: uppercase;
+      font-weight: 700;
+      display: inline-block;
+
+      background-image: linear-gradient(
+        to right,
+        $color-primary-light,
+        $color-primary-dark
+      );
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    h3 {
+      font-size: calc(1.2rem + 0.2vw);
+      color: $color-primary;
+    }
+    h4 {
+      font-size: calc(1rem + 0.2vw);
+    }
+    p {
+      font-size: calc(0.75rem + 0.25vw);
     }
 
-    @media all and (min-width: 768px) {
-      .worker-card {
-        order: 1;
+    h2,
+    h3,
+    h4,
+    p {
+      margin-bottom: 0.5em;
+    }
+
+    .worker-section {
+      order: 1;
+    }
+
+    .showcase-work {
+      order: 2;
+      background: $color-grey-light-1;
+      padding-top: 2em;
+
+      &__header {
+        margin-bottom: 1em;
+        @include mediaQuery(tablet) {
+          display: none;
+        }
       }
-      .showcase-work {
-        order: 2;
-        flex: 3 0px;
-      }
-      .review {
-        order: 3;
-      }
-      .footer {
-        order: 4;
+      img {
+        width: 100%;
       }
     }
-    @media all and (min-width: 576px) {
-      aside {
-        flex: 1 0 0;
-        height: calc(100% - 160px);
-      }
+
+    .review {
+      order: 3;
+    }
+    .footer {
+      order: 4;
     }
 
     header,
@@ -44,11 +77,50 @@
       }
     }
 
-    .showcase-work {
-      background: $color-grey-light-1;
-      img {
-        width: 100%;
+    @include mediaQuery(tablet) {
+      display: grid;
+      grid-template-areas:
+        "header header header header"
+        "worker proj   proj      review"
+        "worker proj   proj      review"
+        "worker proj   proj      review"
+        "footer footer footer  footer";
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 85px 1fr 1fr 85px;
+      gap: 0;
+
+      header {
+        grid-area: header;
       }
+      .worker-section {
+        grid-area: worker;
+      }
+      .showcase-work {
+        grid-area: proj;
+        overflow: hidden;
+
+        .card-list {
+          overflow: auto;
+          height: 100%;
+        }
+      }
+      .review {
+        grid-area: review;
+      }
+      .footer {
+        grid-area: footer;
+      }
+    }
+
+    @include mediaQuery(desktop) {
+      grid-template-areas:
+        "header header header header header"
+        "worker proj   proj   proj   review"
+        "worker proj   proj   proj   review"
+        "worker proj   proj   proj   review"
+        "footer footer footer footer footer";
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: 85px 1fr 1fr 1fr 85px;
     }
   }
 

@@ -4,6 +4,6 @@ export const worker = {
   motto: "I Never Lose, either I win or I learn",
   from: "USA",
   memberSince: "2013",
-  avgResponseTime: "2 hours",
-  lastDelivery: "13 hours",
+  avgResponseTime: "2h",
+  lastDelivery: "13h",
 };

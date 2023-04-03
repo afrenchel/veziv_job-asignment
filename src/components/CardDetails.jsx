@@ -5,9 +5,13 @@ import Button from "./Button";
 const CardDetails = ({ currentCard, isEditing, setIsEditing }) => {
   return (
     <div className="details-container">
-      <div className="modal-image-wrapper">
+      <div
+        className={`modal-image-wrapper ${
+          isEditing ? "modal-image-wrapper__hidden-sm" : ""
+        }`}
+      >
         <img
-          className="details-container__img"
+          className={`details-container__img`}
           src={currentCard?.image}
           alt=""
         />

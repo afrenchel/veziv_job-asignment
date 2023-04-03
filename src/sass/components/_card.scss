@@ -1,17 +1,28 @@
 .card-list {
-  display: grid;
-  grid-template-columns: repeat(3, 350px);
-  column-gap: 10px;
-  row-gap: 15px;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  @include mediaQuery(laptop) {
+    display: grid;
+    grid-template-columns: repeat(2, 270px);
+    column-gap: 10px;
+    row-gap: 15px;
+  }
+
+  @include mediaQuery(desktop) {
+    grid-template-columns: repeat(3, 350px);
+    justify-content: center;
+  }
 
   .card {
     display: flex;
     flex-direction: column;
-    max-height: 230px;
     border: 2px solid $color-primary-dark;
     border-radius: $border-radius;
     position: relative;
+    margin-inline: 1em;
+    height: 320px;
 
     &-hidden {
       & > *:not(.card-cta) {
@@ -23,16 +34,13 @@
       margin: 0.5em 1em;
       text-align: center;
       overflow: hidden;
-      max-height: 75px;
 
       & * {
         @include text-ellipsize;
       }
-      h3 {
-        color: $color-primary-dark;
-        font-size: 1.8rem;
-      }
+
       p {
+        font-size: 0.85rem;
         color: $color-grey-dark;
         padding: 0 15%;
         white-space: unset;
@@ -60,6 +68,15 @@
       height: 60%;
       object-fit: cover;
       border-radius: 6px;
+    }
+
+    @include mediaQuery() {
+      max-height: 230px;
+      height: unset;
+      margin-inline: unset;
+      .card-info {
+        max-height: 75px;
+      }
     }
   }
 }

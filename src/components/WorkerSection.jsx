@@ -27,11 +27,11 @@ const WorkerSection = () => {
           <img src={WorkerImg} alt="digital-worker" />
         </div>
         <div className="worker-card__info">
-          <h2>{name}</h2>
-          <h3>
+          <h3>{name}</h3>
+          <h4>
             <span>@</span>
             {username}
-          </h3>
+          </h4>
           <p className="short-desc">{motto}</p>
           <div className="worker-card__ctas">
             <Button title={"Contact Me"} additionalStyle={"bg-primary"} />
@@ -39,34 +39,34 @@ const WorkerSection = () => {
           </div>
         </div>
         <hr />
-        <ul className="worker-card__other">
-          <li>
-            <span>
-              <GoLocation /> From
-            </span>
-            <span>{from}</span>
-          </li>
-          <li>
-            <span>
-              <FaUserAlt /> Member since
-            </span>
-            <span>{memberSince}</span>
-          </li>
-          <li>
-            <span>
-              <GiSandsOfTime /> Avg.Response Time{" "}
-            </span>
-            <span>{avgResponseTime}</span>
-          </li>
-          <li>
-            <span>
-              <BsSendFill />
-              Last Delivery
-            </span>
-            <span>{lastDelivery}</span>
-          </li>
-        </ul>
       </div>
+      <ul className="worker-card__other">
+        <li>
+          <span>
+            <GoLocation /> From
+          </span>
+          <span>{from}</span>
+        </li>
+        <li>
+          <span>
+            <FaUserAlt /> Member since
+          </span>
+          <span>{memberSince}</span>
+        </li>
+        <li>
+          <span>
+            <GiSandsOfTime /> Avg.Response{" "}
+          </span>
+          <span>{avgResponseTime}</span>
+        </li>
+        <li>
+          <span>
+            <BsSendFill />
+            Last Delivery
+          </span>
+          <span>{lastDelivery}</span>
+        </li>
+      </ul>
     </aside>
   );
 };

@@ -37,6 +37,7 @@ const Input = ({
         placeholder={placeholder}
         accept={accept}
         defaultValue={defaultValue}
+        maxLength={150}
       />
       <span className="text-danger">
         {errorMessage && accept ? errorMessage : ""}

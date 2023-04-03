@@ -3,12 +3,8 @@ form {
   flex: 1;
   flex-direction: column;
 
-  h2 {
-    font-size: 1.8rem;
-  }
-
   .input-container {
-    margin-bottom: 1.6em;
+    margin-bottom: 0.5em;
     max-width: 300px;
     text-align: start;
 
@@ -35,7 +31,7 @@ form {
     input {
       display: block;
       width: 100%;
-      padding: 1.2rem;
+      padding: 0.5rem;
       margin-top: 0.5em;
       border: 2px solid $color-grey-dark;
       border-radius: $border-radius-sm;
@@ -49,8 +45,8 @@ form {
   }
 
   label {
-    font-size: 1.25rem;
-    margin-block: 1rem;
+    font-size: 0.75rem;
+    margin-block: 1em;
   }
 
   .label-img-input {
@@ -65,5 +61,17 @@ form {
 
   button {
     margin-top: 2rem;
+  }
+
+  @include mediaQuery(desktop) {
+    .input-container {
+      margin-bottom: 1.6em;
+    }
+    input {
+      padding: 1.2rem;
+    }
+    label {
+      font-size: 1.25rem;
+    }
   }
 }

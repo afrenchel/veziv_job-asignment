@@ -28,72 +28,87 @@
   position: relative;
 
   &.add-entry {
-    width: 30vw;
     height: 75vh;
+
+    @include mediaQuery(desktop) {
+      width: 30vw;
+    }
   }
 
   &.details {
     .details-container {
-      width: 40vw;
       display: flex;
-      min-height: 460px;
-      max-height: 525px;
+      flex-direction: column;
       gap: 1rem;
 
       .modal-image-wrapper {
-        max-width: 60%;
         border-right: 1px solid #ddd;
+        max-height: 240px;
         img {
           height: 100%;
         }
+
+        &__hidden-sm {
+          display: none;
+        }
       }
+
       &__info {
         display: flex;
         flex-direction: column;
         gap: 1em;
         justify-content: space-evenly;
+        padding-inline: 1em;
+        margin-bottom: 1em;
+
         p {
           background-color: lighten($color-primary, 15%);
-
-          padding: 2.5em;
+          padding: 0.5em;
           border: 2px dashed black;
+          overflow-wrap: anywhere;
+        }
+      }
+
+      @include mediaQuery(desktop) {
+        flex-direction: row;
+        width: 40vw;
+        min-height: 460px;
+        max-height: 525px;
+
+        .modal-image-wrapper {
+          max-width: 60%;
+
+          &__hidden-sm {
+            display: block;
+          }
+        }
+
+        &__info {
+          padding: 0;
+          margin-bottom: 0;
+          p {
+            padding: 2.5em;
+          }
         }
       }
     }
   }
   .modal-header {
     width: 100%;
-    padding-block: 2rem;
+    padding-block: 0.5em;
     border-bottom: 1.5px solid #ddd;
 
-    .modal-title {
-      font-size: 2.5rem;
-      text-transform: uppercase;
-      font-weight: 700;
-      display: inline-block;
-
-      background-image: linear-gradient(
-        to right,
-        $color-primary-light,
-        $color-primary-dark
-      );
-      -webkit-background-clip: text;
-      color: transparent;
+    @include mediaQuery(laptop) {
+      padding-block: 0.5em;
     }
-  }
-
-  h3 {
-    color: $color-primary;
-    font-size: 2rem;
-    margin-bottom: 1em;
   }
 }
 
 .close-modal-btn {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2rem;
-  border-color: transparent;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
   cursor: pointer;
 }

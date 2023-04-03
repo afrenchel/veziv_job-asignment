@@ -26,11 +26,17 @@
 }
 
 .btn-rounded {
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   border: none;
   padding: 0.25em 0.5rem;
-  font-size: 1.4rem;
+  font-size: 1.125rem;
   @include alignCenter;
+
+  @include mediaQuery(tablet) {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.4rem;
+  }
 }

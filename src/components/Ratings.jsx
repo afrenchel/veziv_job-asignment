@@ -15,7 +15,7 @@ const Ratings = () => {
         return (
           <div key={review.id} className="review-bubble">
             <h3 className="review-author">{review.name}</h3>
-            <p>{review.review}</p>
+            <p className="review-p-text">{review.review}</p>
           </div>
         );
       })}

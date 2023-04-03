@@ -9,6 +9,7 @@ const Portfolio = () => {
 
   return (
     <main className="showcase-work">
+      <h2 className="showcase-work__header">My Portfolio</h2>
       <div className="card-list">
         {appState.works?.map((work) => (
           <Card key={work.id} work={work} />
