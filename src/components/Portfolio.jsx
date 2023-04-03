@@ -7,10 +7,6 @@ import Modal from "./Modal";
 const Portfolio = () => {
   const appState = useAppState();
 
-  useEffect(() => {
-    console.log(appState, "APPSTATE");
-  }, [appState]);
-
   return (
     <main className="showcase-work">
       <div className="card-list">

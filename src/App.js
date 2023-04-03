@@ -27,21 +27,6 @@ const App = () => {
               built with <span className="heart-icon"> &#10084;</span> by ALINA
             </p>
             <p className="p-text">&copy;All rights reserved 2023</p>
-            <div className="social-links">
-              <div>
-                <a
-                  href="https://www.linkedin.com/in/alina-frenchel-a9337b22a/"
-                  target="_blank"
-                >
-                  <BsLinkedin className="svg-in" />
-                </a>
-              </div>
-              <div>
-                <a href="https://github.com/afrenchel" target="_blank">
-                  <AiFillGithub />
-                </a>
-              </div>
-            </div>
           </footer>
         </div>
       </div>

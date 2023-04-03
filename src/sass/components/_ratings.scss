@@ -1,4 +1,4 @@
-.rattings {
+.review {
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -25,6 +25,7 @@
 
     h3 {
       margin-bottom: 1em;
+      color: $color-grey-dark-3;
     }
   }
 }

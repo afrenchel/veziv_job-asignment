@@ -3,13 +3,12 @@ import { reviews } from "../data/reviews";
 
 const Ratings = () => {
   const { name, review } = reviews;
-  console.log(reviews);
 
   return (
-    <aside className="rattings">
+    <aside className="review">
       <div>
-        <h2>Alina's ratings</h2>
-        <div className="ratings-score">⭐⭐⭐⭐⭐</div>
+        <h2>Alice's ratings and reviews</h2>
+        <span>⭐⭐⭐⭐⭐</span>
       </div>
 
       {reviews.map((review) => {

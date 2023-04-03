@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+//TASK//👩‍💻
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Develop a small web application that lets manage the list of showcased works for a digital worker.
+An entry can be hidden from the portfolio and can have a link to its customer's website:
 
-## Available Scripts
+1. UI/UX design: Design the user interface and user experience of the application to make it visually appealing and easy to use.
 
-In the project directory, you can run:
+2. Data Modeling: Define the data structure and relationships for the portfolio entries.
 
-### `npm start`
+3. CRUD (Create, Read, Update, Delete) operations: Implement functionality for adding, editing, and removing entries from the portfolio.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+4. Portfolio display: Develop the functionality to display the portfolio entries in a list or grid format.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+5. Image Upload: Implement functionality to allow the user to upload images for each portfolio entry.
 
-### `npm test`
+6. Hide/Unhide entries: Implement functionality to hide or unhide a portfolio entry from being displayed.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+7. Customer link: Implement functionality to include a link to the customer's website for each portfolio entry.
 
-### `npm run build`
+8. Responsiveness: Ensure the application is responsive and looks good on different devices and screen sizes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+9. Testing: Perform thorough testing of the application to ensure it is functioning as expected.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In short, the following tasks are needed to make your entry valid:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Use Angular/React/Vue CLI to create a new project and define at least a component.
+2. Create a model to represent a showcased work's details.
+3. Display the list of works using an ngFor directive.
+4. Add the functionality to add a new work using a form.
+5. Add the functionality to edit an existing work.
+6. Add the functionality to delete an existing work.
 
-### `npm run eject`
+////////////////////////////////////⭐My portofolio⭐////////////////////////////////////////////////
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Based on the assignment request I have created a single page application in React Framework using as inspiration the Fiverr Profile Model.The app showcases projects of a webdeveloper and has multiple features which are use case for CRUD operations:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+--Data used for the app was generated with Chat Gpt (projects,profile img,reviews)--
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1.Adding new portofolio entry (title,description,image,link,status)
+2.Hiding/Unhiding a project
+3.Editing a project (title,description,image,link,status)
+4.Delete a project
+5.Link to the customer website
+6.Error handling for form inputs
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+7.General info about the worker
+8.Review&Ratings area (static-for design purpsoses)
+9.UI/UX
+10.Responsive layout
 
-## Learn More
+//////////////////////////////////🌟Things to improve/add in the future🌟//////////////////////////////////////////////
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1.Better CSS architecture
+2.Better input error handling
+3.Login feature with editing/preview right
+4.Add reviews and rating form
+5.Preview the images before uploading

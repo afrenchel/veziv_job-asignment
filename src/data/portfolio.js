@@ -86,7 +86,7 @@ export const works = [
       "Designed and developed a custom WordPress theme using PHP, HTML, and CSS",
     image: Proj8,
     client: "Jane Doe",
-    isHidden: true,
+    isHidden: false,
     link: "https://www.fiverr.com/users/phoebe_johnson/portfolio/NjI5NTNiYzdjMTRhNTAwMDAxNWU5YTMx",
   },
 
