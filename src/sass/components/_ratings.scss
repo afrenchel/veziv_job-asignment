@@ -3,26 +3,30 @@
   flex-direction: column;
   gap: 1em;
   padding-inline: 1em;
+  margin-bottom: 1rem;
 
   .review-bubble {
-    background-color: lighten($color-primary, 15%);
+    background-color: lighten($color-primary-light, 25%);
     color: black;
-    min-height: 200px;
     height: fit-content;
     border-radius: 50px;
     display: flex;
-    padding: 5%;
+    padding: 0.5em;
     flex-direction: column;
     border: 2px dashed black;
 
+    .review-p-text {
+      font-style: italic;
+      font-weight: 500;
+    }
+
     .review-author {
-      margin-bottom: 1em;
+      margin-bottom: 0.25em;
       color: $color-grey-dark-3;
     }
 
-    @include mediaQuery(desktop) {
-      min-height: unset;
-
+    @include mediaQuery(tablet) {
+      letter-spacing: 1px;
       h2 {
         font-size: 1.125rem;
       }
@@ -30,7 +34,27 @@
         font-size: 1rem;
       }
       .review-p-text {
-        font-size: 0.825rem;
+        font-size: 0.75rem;
+      }
+    }
+  }
+  @include mediaQuery(tablet) {
+    padding-inline: 0.25em;
+    overflow: auto;
+    margin-top: 1em;
+    .review-header {
+      .review-title {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  @include mediaQuery(desktop) {
+    margin-top: 2em;
+
+    .review-header {
+      .review-title {
+        font-size: 1.8rem;
+        display: block;
       }
     }
   }

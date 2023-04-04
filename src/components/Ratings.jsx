@@ -6,8 +6,8 @@ const Ratings = () => {
 
   return (
     <aside className="review">
-      <div>
-        <h2>Alice's ratings and reviews</h2>
+      <div className="review-header">
+        <h2 className="review-title">Alice's reviews</h2>
         <span>⭐⭐⭐⭐⭐</span>
       </div>
 

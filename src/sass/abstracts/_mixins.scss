@@ -38,15 +38,3 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-
-@mixin envelopeShape {
-  clip-path: polygon(
-    0 3%,
-    100% 3%,
-    100% 75%,
-    75% 75%,
-    35% 91%,
-    50% 75%,
-    0% 75%
-  );
-}

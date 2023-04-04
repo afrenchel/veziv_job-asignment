@@ -6,6 +6,7 @@
     text-align: center;
     height: 100vh;
     gap: 2em;
+    position: relative;
 
     h2 {
       font-size: calc(1.5rem + 0.2vw);
@@ -66,14 +67,24 @@
       order: 4;
     }
 
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 3;
+    }
+
     header,
     footer {
-      height: 85px;
       background-color: $color-primary;
 
       .p-text {
-        font-size: 1.2rem;
+        font-size: 0.75rem;
         color: $color-grey-dark-3;
+      }
+
+      @include mediaQuery(desktop) {
+        font-size: 1.2rem;
       }
     }
 
@@ -91,7 +102,9 @@
 
       header {
         grid-area: header;
+        position: unset;
       }
+
       .worker-section {
         grid-area: worker;
       }
@@ -112,7 +125,7 @@
       }
     }
 
-    @include mediaQuery(desktop) {
+    @include mediaQuery(laptop) {
       grid-template-areas:
         "header header header header header"
         "worker proj   proj   proj   review"
@@ -120,7 +133,7 @@
         "worker proj   proj   proj   review"
         "footer footer footer footer footer";
       grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: 85px 1fr 1fr 1fr 85px;
+      grid-template-rows: 8vh 1fr 1fr 1fr 8vh;
     }
   }
 

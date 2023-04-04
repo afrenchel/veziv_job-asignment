@@ -8,9 +8,6 @@ import Ratings from "./components/Ratings";
 
 import { WorksProvider } from "./context/WorksContext";
 
-import { BsLinkedin } from "react-icons/bs";
-import { AiFillGithub } from "react-icons/ai";
-
 import "./sass/main.scss";
 
 const App = () => {
