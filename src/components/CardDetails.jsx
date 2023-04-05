@@ -10,11 +10,15 @@ const CardDetails = ({ currentCard, isEditing, setIsEditing }) => {
           isEditing ? "modal-image-wrapper__hidden-sm" : ""
         }`}
       >
-        <img
-          className={`details-container__img`}
-          src={currentCard?.image}
-          alt=""
-        />
+        {isEditing ? (
+          <h3>Edit {currentCard?.title}</h3>
+        ) : (
+          <img
+            className={`details-container__img`}
+            src={currentCard?.image}
+            alt=""
+          />
+        )}
       </div>
 
       <div className="details-container__info">
@@ -25,6 +29,7 @@ const CardDetails = ({ currentCard, isEditing, setIsEditing }) => {
             <Button
               title={`${isEditing ? "Save" : "EDIT Project"} `}
               handleClick={() => setIsEditing(!isEditing)}
+              additionalStyle={"bg-secondary-dark"}
             />
           </>
         ) : (

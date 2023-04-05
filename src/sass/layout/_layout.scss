@@ -8,6 +8,10 @@
     gap: 2em;
     position: relative;
 
+    h1 {
+      font-size: 1.7rem;
+    }
+
     h2 {
       font-size: calc(1.5rem + 0.2vw);
       text-transform: uppercase;
@@ -79,6 +83,7 @@
       background-color: $color-primary;
 
       .p-text {
+        margin-top: 0.8rem;
         font-size: 0.75rem;
         color: $color-grey-dark-3;
       }

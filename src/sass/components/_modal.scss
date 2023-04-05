@@ -19,7 +19,7 @@
 .modal-container {
   background: $color-white;
   border-radius: $border-radius;
-  height: 80vh;
+  height: auto;
   width: 90vw;
   max-width: 876px;
   text-align: center;
@@ -28,7 +28,15 @@
   position: relative;
 
   &.add-entry {
-    height: 75vh;
+    height: auto;
+
+    form {
+      align-self: flex-start;
+
+      button {
+        margin-bottom: 1.25rem;
+      }
+    }
 
     @include mediaQuery(desktop) {
       width: 30vw;
@@ -42,10 +50,11 @@
       gap: 1rem;
 
       .modal-image-wrapper {
-        border-right: 1px solid #ddd;
         max-height: 240px;
+        display: flex;
+
         img {
-          height: 100%;
+          max-height: 100%;
         }
 
         &__hidden-sm {
@@ -70,14 +79,12 @@
       }
 
       @include mediaQuery(desktop) {
-        flex-direction: row;
         width: 40vw;
         min-height: 460px;
-        max-height: 525px;
+        padding-inline: 20%;
+        align-self: flex-start;
 
         .modal-image-wrapper {
-          max-width: 60%;
-
           &__hidden-sm {
             display: block;
           }
@@ -100,6 +107,24 @@
 
     @include mediaQuery(laptop) {
       padding-block: 0.5em;
+    }
+  }
+
+  @include mediaQuery(mobile) {
+    height: auto;
+    width: 50vw;
+    .details-container__img {
+      max-height: 255px;
+    }
+  }
+  @include mediaQuery(desktop) {
+    width: clamp(600px, 40vw, 100%);
+
+    button {
+      margin-bottom: 1.25rem;
+    }
+    .details-container__img {
+      max-height: unset;
     }
   }
 }

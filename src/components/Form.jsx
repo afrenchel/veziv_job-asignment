@@ -82,6 +82,7 @@ const Form = ({ isEditing, setIsEditing, currentCard }) => {
             : currentCard.description,
           image: projectImg ? projectImg : currentCard.image,
           isHidden: projectStatus,
+          link: projectLink ? projectLink : currentCard.link,
         },
       });
       setIsEditing(false);

@@ -14,7 +14,7 @@
 @each $key, $col in $colors {
   .bg-#{$key} {
     background-color: $col;
-    color: $color-black;
+    color: $color-grey-dark-3;
     border: none;
   }
 }
